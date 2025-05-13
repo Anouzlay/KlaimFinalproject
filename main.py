@@ -47,7 +47,6 @@ def main():
             
             
             if submit_keys:
-                openai_key
                 st.success("API keys saved!")
         
         st.markdown("---")
