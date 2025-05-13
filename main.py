@@ -27,7 +27,6 @@ from tools.deep_search import process_healthcare_provider
 load_dotenv()
 
 
-OPENAI_API_KEY = ""
 # Set your API keys (in a real app, you would use st.secrets)
 API_KEY_AIRTABLE = os.environ["API_KEY_AIRTABLE"]
 # Create a temporary directory for results
@@ -48,8 +47,7 @@ def main():
             
             
             if submit_keys:
-            
-                OPENAI_API_KEY= openai_key
+                openai_key
                 st.success("API keys saved!")
         
         st.markdown("---")
@@ -79,21 +77,21 @@ def main():
             
             with st.spinner("The AI agents are researching your topic. This may take several minutes..."):
                 # st.markdown(enhanced_duckduckgo_search(user_input))
-                #result= extract_validation_result(validate_hospital(OPENAI_API_KEY, user_input))
+                #result= extract_validation_result(validate_hospital(openai_key, user_input))
                 hospital_name = user_input
-                ADDRESS_search_result= search_for_address(hospital_name  , OPENAI_API_KEY)
+                ADDRESS_search_result= search_for_address(hospital_name  , openai_key)
                 #Using openai web search 
-                CONTACT_PERSON_result=search_for_hospital_ceo(hospital_name , OPENAI_API_KEY)
+                CONTACT_PERSON_result=search_for_hospital_ceo(hospital_name , openai_key)
 
                 #CONTACT_NUMBER =contact_number(hospital_name , CONTACT_PERSON_result['ceo_name'])
-                URL_WEBSITE = search_for_website(hospital_name  , OPENAI_API_KEY)
+                URL_WEBSITE = search_for_website(hospital_name  , openai_key)
 
 
                 #Using openai web search 
-                NETREVENUEYEARLY = search_for_revenue(hospital_name  , OPENAI_API_KEY)
-                NO_OF_SPECIALTIES = search_for_specialities(hospital_name, OPENAI_API_KEY)
-                NOOFDOCTORS = search_for_doctors(hospital_name , OPENAI_API_KEY)
-                INSURANCES_ACCEPTED = search_for_insurance(hospital_name , OPENAI_API_KEY)
+                NETREVENUEYEARLY = search_for_revenue(hospital_name  , openai_key)
+                NO_OF_SPECIALTIES = search_for_specialities(hospital_name, openai_key)
+                NOOFDOCTORS = search_for_doctors(hospital_name , openai_key)
+                INSURANCES_ACCEPTED = search_for_insurance(hospital_name , openai_key)
 
                 #Using duckduckgo web search 
                 #NETREVENUEYEARLY = enhanced_duckduckgo_search(hospital_name ,create_category_queries(hospital_name ,'NET REVENUE/YEARLY'))
