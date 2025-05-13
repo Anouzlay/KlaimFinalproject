@@ -41,7 +41,7 @@ def main():
         
         # We're using a form to better control when the API keys are updated
         with st.form("api_keys_form"):
-            openai_key = st.text_input("OpenAI API Key", value=st.session_state['openai_api_key'], 
+            openai_key = st.text_input("OpenAI API Key", 
                                       type="password", key="openai_key_input")
             submit_keys = st.form_submit_button("Save API Keys")
 
