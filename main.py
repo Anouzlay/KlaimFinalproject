@@ -29,7 +29,6 @@ load_dotenv()
 
 
 # Set your API keys (in a real app, you would use st.secrets)
-OPENAI_API_KEY= os.environ["OPENAI_API_KEY"] 
 API_KEY_AIRTABLE = os.environ["API_KEY_AIRTABLE"]
 # Create a temporary directory for results
 def main():
@@ -50,9 +49,12 @@ def main():
             openai_key = st.text_input("OpenAI API Key", value=st.session_state['openai_api_key'], 
                                       type="password", key="openai_key_input")
             submit_keys = st.form_submit_button("Save API Keys")
+
+            
             
             if submit_keys:
                 st.session_state['openai_api_key'] = openai_key
+                OPENAI_API_KEY= st.session_state['openai_api_key']
                 st.success("API keys saved!")
         
         st.markdown("---")
