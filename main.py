@@ -32,12 +32,7 @@ OPENAI_API_KEY = None
 API_KEY_AIRTABLE = os.environ["API_KEY_AIRTABLE"]
 # Create a temporary directory for results
 def main():
-    st.set_page_config(page_title="Research Assistant with CrewAI", layout="wide")
-    
-    # Initialize session state for API keys
-    if 'openai_api_key' not in st.session_state:
-        st.session_state['openai_api_key'] = OPENAI_API_KEY
-    
+    st.set_page_config(page_title="Research Assistant with CrewAI", layout="wide") 
     st.title("Klaim Project")
     
     # Sidebar for API keys
