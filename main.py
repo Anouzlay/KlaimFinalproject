@@ -28,7 +28,7 @@ load_dotenv()
 
 
 # Set your API keys (in a real app, you would use st.secrets)
-API_KEY_AIRTABLE = os.environ["API_KEY_AIRTABLE"]
+
 # Create a temporary directory for results
 def main():
     st.set_page_config(page_title="Research Assistant with CrewAI", layout="wide") 
