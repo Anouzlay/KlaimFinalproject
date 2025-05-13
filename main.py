@@ -203,7 +203,7 @@ def main():
                }                
                 st.subheader("Research Report")
                 st.markdown('################')
-                st.markdown(run_agent(Final_data))
+                st.markdown(run_agent(Final_data , openai_key))
 
 
     elif 'submitted' not in locals() or not submitted:
