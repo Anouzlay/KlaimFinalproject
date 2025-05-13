@@ -1,4 +1,4 @@
-
+import os
 import time
 import pandas as pd
 import streamlit as st
@@ -10,7 +10,6 @@ from tools.insurance import   search_for_insurance
 from tools.adress import search_for_address
 from tools.url import search_for_website
 from  tools.phone_number import contact_number
-import os
 from tools.revenue import search_for_revenue
 from tools.specialitie import search_for_specialities
 from tools.doctors import search_for_doctors
@@ -19,15 +18,6 @@ from helper import airtable_add , extract_validation_result , validate_hospital 
 from dotenv import load_dotenv
 from Crewai_agent import run_agent
 from tools.deep_search import process_healthcare_provider 
-import chromadb
-from chromadb.config import Settings
-
-chroma_client = chromadb.Client(Settings(
-    persist_directory="/mount/src/chroma_db",  # or "./chroma_db"
-    chroma_db_impl="duckdb+parquet",
-    anonymized_telemetry=False
-))
-
 load_dotenv()
 
 
