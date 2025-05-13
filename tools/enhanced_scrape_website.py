@@ -3,16 +3,9 @@ import requests
 from bs4 import BeautifulSoup
 import logging
 import time
-import PyPDF2
-import pdfplumber
 from io import BytesIO
 import io
 import re
-import cloudscraper
-from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.chrome.service import Service
-from selenium import webdriver
-from webdriver_manager.chrome import ChromeDriverManager
 import random
 import json
 from urllib.parse import urlparse
