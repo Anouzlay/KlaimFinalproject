@@ -48,8 +48,8 @@ def main():
             
             
             if submit_keys:
-                st.session_state['openai_api_key'] = openai_key
-                OPENAI_API_KEY= st.session_state['openai_api_key']
+            
+                OPENAI_API_KEY= openai_key
                 st.success("API keys saved!")
         
         st.markdown("---")
