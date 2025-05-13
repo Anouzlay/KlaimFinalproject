@@ -1,7 +1,8 @@
 from crewai import Agent, Task, Crew
 import json
 
-def run_agent(data_dict):
+def run_agent(data_dict , openai_api_key):
+    litellm.api_key = openai_api_key
     # Ensure we're working with a Python dictionary
     if isinstance(data_dict, str):
         try:
